@@ -52,19 +52,16 @@ for (let i = 0; i != rows; i++) {
 
 document.addEventListener('keyup', event => {
     if (event.code === 'Space') {
-        if (done) {
-            movePlayers()
-        }
+        movePlayers()
     }
 })
 
-let done = true
 function movePlayers() {
-    done = false;
     for (let i = 0; i != playerPositions.length; i++) {
         console.log(`ALL: ${playerPositions}`)
-        console.log(`Player: ${playerPositions[i]}`)
         console.log(`Selected: ${i}`)
+        console.log(`Player: ${playerPositions[i]}`)
+        console.log(`All length: ${playerPositions.length}`)
         playerRow = playerPositions[i][0]
         playerColumn = playerPositions[i][1]
 
@@ -82,11 +79,9 @@ function movePlayers() {
                     //if not, it updates the position in the array.
                     if (moveIndividualPlayer(playerRow,playerColumn,playerRow,newCoord)) {
                         playerPositions = playerPositions.filter(item => item !== playerPositions[i])
-                            done = true;
-
+                        i = -1;
                     }else{
                         playerPositions[i][1] = newCoord
-                            done = true;
 
                     }
                 }
@@ -102,11 +97,9 @@ function movePlayers() {
                     //if not, it updates the position in the array.
                     if (moveIndividualPlayer(playerRow,playerColumn,playerRow,newCoord)) {
                         playerPositions = playerPositions.filter(item => item !== playerPositions[i])
-                            done = true;
-
+                        i = -1;
                     }else{
                         playerPositions[i][1] = newCoord
-                            done = true;
 
                     }
                 }
@@ -122,11 +115,9 @@ function movePlayers() {
                     //if not, it updates the position in the array.
                     if (moveIndividualPlayer(playerRow,playerColumn,newCoord,playerColumn)) {
                         playerPositions = playerPositions.filter(item => item !== playerPositions[i])
-                            done = true;
-
+                        i = -1;
                     }else{
                         playerPositions[i][0] = newCoord
-                            done = true;
 
                     }
                 }
@@ -142,11 +133,9 @@ function movePlayers() {
                     //if not, it updates the position in the array.
                     if (moveIndividualPlayer(playerRow,playerColumn,newCoord,playerColumn)) {
                         playerPositions = playerPositions.filter(item => item !== playerPositions[i])
-                            done = true;
-
+                        i = -1;
                     }else{
                         playerPositions[i][0] = newCoord
-                            done = true;
 
                     }
                 }
