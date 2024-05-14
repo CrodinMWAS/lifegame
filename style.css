@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+}
+
+#gameSpace{
+    display: grid;
+    overflow-x: scroll;
+}   
+
+.tile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+    background-color: #EAEAEA;
+}
+
+.hole{
+    border-radius: 50%;
+    width: 75%;
+    aspect-ratio: 1;
+    background-color: #212121;
+}
+
+.player{
+    padding: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
